@@ -1,20 +1,23 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Button } from './components';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-     <div className="min-h-screen bg-surface-dark flex items-center justify-center">
-      <h1 className="text-4xl font-bold text-brand-primary">
-        Design tokens working ✅
-      </h1>
+    <div className="p-8 space-y-4">
+      <Button>Primary</Button>
+
+      <Button variant="secondary">Secondary</Button>
+
+      <Button variant="outline">Outline</Button>
+
+      <Button size="sm">Small</Button>
+
+      <Button size="lg">Large</Button>
+
+      <Button isLoading>Saving</Button>
+
+      <Button disabled>Disabled</Button>
     </div>
-    </>
-  )
+  );
 }
 
-export default App
+export default App;
