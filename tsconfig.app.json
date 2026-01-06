@@ -4,8 +4,7 @@
     "lib": ["ES2022", "DOM", "DOM.Iterable"],
     "jsx": "react-jsx",
 
-    "types": ["vite/client", "react", "react-dom"],
-
+    "types": ["vite/client"],
     "module": "ESNext",
     "moduleResolution": "node",
     "strict": true,
