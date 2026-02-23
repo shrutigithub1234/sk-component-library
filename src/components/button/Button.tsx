@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { cva, type VariantProps } from 'class-variance-authority';
 import clsx from 'clsx';
+import { Spinner } from '../Spinner/Spinner';
 
 const buttonVariants = cva(
   'inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none',
@@ -43,7 +44,11 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         aria-busy={isLoading}
         {...props}
       >
-        {isLoading ? <span aria-live="polite">Loading…</span> : children}
+        {isLoading ? (
+          <Spinner size={size === 'sm' ? 'sm' : size === 'lg' ? 'lg' : 'md'} />
+        ) : (
+          children
+        )}
       </button>
     );
   }
