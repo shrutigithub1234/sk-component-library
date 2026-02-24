@@ -1,5 +1,6 @@
 import { useRef } from 'react';
 import { Button } from './components';
+import { Spinner } from './components/Spinner/Spinner';
 
 function App() {
   const buttonRef = useRef<HTMLButtonElement>(null);
@@ -45,6 +46,16 @@ function App() {
             >
               Focus the design-system button
             </button>
+          </div>
+        </section>
+
+        {/* Spinner */}
+        <section className="space-y-6">
+          <h2 className="text-xl font-semibold">Spinner</h2>
+          <div className="flex items-center gap-6">
+            <Spinner size="sm" />
+            <Spinner size="md" />
+            <Spinner size="lg" />
           </div>
         </section>
       </div>
