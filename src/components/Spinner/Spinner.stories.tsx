@@ -24,7 +24,7 @@ export const Default: Story = {
 export const Sizes: Story = {
   render: () => (
     <div style={{ display: 'flex', gap: 16, alignItems: 'center', color: 'red' }}>
-      <Spinner size="sm" />
+      <Spinner label="Submitting form" size="sm" />
       <Spinner size="md" />
       <Spinner size="lg" />
     </div>

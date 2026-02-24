@@ -46,7 +46,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       >
         <span className="relative inline-flex items-center justify-center">
           {/*
-            reason: while loading, spiiner is overlayed, to preserve the width, the content is kept in the DOM,
+            reason: while loading, spinner is overlayed, to preserve the width, the content is kept in the DOM,
             to prevent layout shifting when toggling the loading state
           */}
           {isLoading && (
