@@ -44,11 +44,23 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         aria-busy={isLoading}
         {...props}
       >
-        {isLoading ? (
-          <Spinner size={size === 'sm' ? 'sm' : size === 'lg' ? 'lg' : 'md'} />
-        ) : (
-          children
-        )}
+        <span className="relative inline-flex items-center justify-center">
+          {/*
+            reason: while loading, spiiner is overlayed, to preserve the width, the content is kept in the DOM,
+            to prevent layout shifting when toggling the loading state
+          */}
+          {isLoading && (
+            <span className="absolute inset-0 flex items-center justify-center">
+              <Spinner size={size === 'sm' ? 'sm' : size === 'lg' ? 'lg' : 'md'} />
+            </span>
+          )}
+          {/* Content remains rendered and visually hidden, to ensure layout stability instead of conditional rendering */}
+          <span
+            className={clsx('inline-flex items-center justify-center', isLoading && 'opacity-0')}
+          >
+            {children}
+          </span>
+        </span>
       </button>
     );
   }
